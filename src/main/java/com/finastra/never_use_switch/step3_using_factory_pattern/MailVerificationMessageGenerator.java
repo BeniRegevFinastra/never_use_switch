@@ -1,6 +1,6 @@
 package com.finastra.never_use_switch.step3_using_factory_pattern;
 
-public class MailVerificationMessageGenerator extends AbstractMessageGenerator {
+public class MailVerificationMessageGenerator extends MessageGenerator {
 
     public MailVerificationMessageGenerator(int messageCode) {
         super(messageCode);

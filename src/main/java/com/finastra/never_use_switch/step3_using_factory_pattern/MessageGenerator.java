@@ -1,12 +1,12 @@
 package com.finastra.never_use_switch.step3_using_factory_pattern;
 
-public abstract class AbstractMessageGenerator {
+public abstract class MessageGenerator {
     private int messageCode = 0;
 
-    public AbstractMessageGenerator() {
+    public MessageGenerator() {
     }
 
-    public AbstractMessageGenerator(int messageCode) {
+    public MessageGenerator(int messageCode) {
         this.messageCode = messageCode;
     }
 

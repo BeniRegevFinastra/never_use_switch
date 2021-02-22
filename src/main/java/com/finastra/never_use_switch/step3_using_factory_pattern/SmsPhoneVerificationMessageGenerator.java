@@ -1,6 +1,6 @@
 package com.finastra.never_use_switch.step3_using_factory_pattern;
 
-public class SmsPhoneVerificationMessageGenerator extends AbstractMessageGenerator {
+public class SmsPhoneVerificationMessageGenerator extends MessageGenerator {
 
     public SmsPhoneVerificationMessageGenerator(int messageCode) {
         super(messageCode);

@@ -1,6 +1,6 @@
 package com.finastra.never_use_switch.step3_using_factory_pattern;
 
-public class MailHappyBirthdayMessageGenerator extends AbstractMessageGenerator {
+public class MailHappyBirthdayMessageGenerator extends MessageGenerator {
     public MailHappyBirthdayMessageGenerator() {
         this.setMessageCode(1);
     }

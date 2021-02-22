@@ -1,10 +1,5 @@
 package com.finastra.never_use_switch.step3_using_factory_pattern;
 
-import com.finastra.never_use_switch.step2_abstract_class.MailHappyBirthdayMessageGenerator;
-import com.finastra.never_use_switch.step2_abstract_class.MailVerificationMessageGenerator;
-import com.finastra.never_use_switch.step2_abstract_class.MailWelcomeMessageGenerator;
-import com.finastra.never_use_switch.step2_abstract_class.SmsPhoneVerificationMessageGenerator;
-
 import java.util.Random;
 
 /**
@@ -56,31 +51,15 @@ public class MessageSenderUsingFactoryPatternExample {
         System.out.println(msg + " was sent");
     }
 
-    public void generateMessage(int messageCode) {
-        switch (messageCode) {
-            case 1:
-//                send(new MailHappyBirthdayMessageGenerator().getMessage());
-                break;
-            case 2:
-//                send(new MailWelcomeMessageGenerator().getMessage());
-                break;
-            case 3:
-//                send(new MailVerificationMessageGenerator().getMessage());
-                break;
-            case 4:
-//                send(new SmsPhoneVerificationMessageGenerator().getMessage());
-                break;
-            default:
-                System.out.println("message type " + messageCode + " is not recognized");
-        }
-    }
     public static void main(String[] args) {
         MessageSenderUsingFactoryPatternExample example = new MessageSenderUsingFactoryPatternExample();
         Random random = new Random();
+        MessageGeneratorFactory messageFactory = new MessageGeneratorFactory();
 
         for(int i=0; i<20; i++) {
             int messageType = random.nextInt(MESSAGE_TYPES_COUNT) + 1;
-            example.generateMessage(messageType);
+            String theMessage = messageFactory.makeMessageGenerator(messageType).getMessage();
+            example.send(theMessage);
         }
     }
 }

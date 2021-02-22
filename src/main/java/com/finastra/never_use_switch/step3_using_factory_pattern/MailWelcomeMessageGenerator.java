@@ -1,6 +1,6 @@
 package com.finastra.never_use_switch.step3_using_factory_pattern;
 
-public class MailWelcomeMessageGenerator extends AbstractMessageGenerator {
+public class MailWelcomeMessageGenerator extends MessageGenerator {
 
     public MailWelcomeMessageGenerator(int messageCode) {
         super(messageCode);
